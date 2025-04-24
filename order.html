@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        section{
+            position:relative;
+            justify-content: center;
+            align-items:center;
+            height:100vh;
+            background-color:rgba(95, 58, 15, 0.836);
+            display:flex;
+        }
+        section::before{
+            content:'';
+            position:absolute;
+            top:25vh;
+            width:100%;
+            height:35%;
+            background:linear-gradient(to right, #785839, #E8D8C2);
+            animation:slide 1.5s linear 0s normal;
+        }
+        section .container{
+            position:relative;
+            border: 1px solid black;
+            z-index:100;
+            box-shadow: 0px 8px 16px grey;
+            width:50%;
+            padding-bottom: 10px;
+            animation:contact 2s linear 0s normal;
+            margin:0;
+            border-radius: 40px;
+            background:linear-gradient(to bottom, #705336, #E8D8C2);
+        }
+        form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+        @keyframes slide {
+            from{
+                transform: translateX(150vh);
+            }
+            to{
+                transform:translateX(0vh);
+            }
+        }
+        @keyframes contact {
+            from{
+                transform:translateY(-150vh);
+                /* top:-60vh ; */
+                opacity:0;
+            }
+            to{
+                transform:translateY(0vh);
+                /* top:0vh; */
+                opacity:1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+    <div class="container ">  
+        <h1 class="text-center">Place an order</h1>  
+            <form id="order-form">
+                <label for="item">Select Item:</label>
+                <select id="item" name="item" required>
+                    <option value="" disabled selected>Select an item</option>
+                    <option value="coffee">Coffee</option>
+                    <option value="tea">Tea</option>
+                    <option value="pastry">Pastry</option>
+                    <option value="burger">burger</option>
+                    <option value="pizza">pizza</option>
+                    <option value="brownies">brownies</option>
+                    <option value="fries">fries</option>
+                </select>
+                <br>
+    
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+                <br>
+    
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+    
+                <button type="submit">Submit Order</button>
+            </form>  
+          </div>  
+    </section>
+</body>
+</html>
